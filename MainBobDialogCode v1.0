@@ -1,0 +1,52 @@
+#############################################
+#                                           #
+#    AI Open Source Virtual Dialog Robot    #
+#                                           #
+#                     By                    #
+#                                           #
+#                Gavin Winchell             #
+#                                           #
+#                 Version 1.0               #
+#                                           #
+#############################################
+
+#Import
+from random import randint
+import time
+import datetime
+
+#Opening Message
+print ("Hello, I am Bob. A simple open source ai robot")
+time.sleep(2)
+
+#Input Message
+task = input ("I will be showing of a few of my abilitys today. Type a task that you would like me to do. I can accept full sentences. If you would like to know my keywords that I react to, do /help. >>>> ")
+
+#Keywords (Defining all of the keywords that will be tested for in the input)
+SandwichKeywords = ["sandwich", "eat sandwich", "moldy sandwich"]
+JokeKeywords = ["joke", "tell me a joke", "pun"]
+NameKeywords = ["change name", "my name"]
+MyNameKeywords = ["what is my name", "know my name"]
+TimeKeywords = ["what is the time", "time"]
+HelpKeywords = ["/help"]
+
+#Keyword If Staments (testing for any of the keywords that are pre-defined)
+if any(keyword in task for keyword in SandwichKeywords):
+    print("Nom Nom... This is some good moldy sandwich!")
+if any(keyword in task for keyword in JokeKeywords):
+    print("What was the diplomatic pig's name? Alexander HAM-lton.")
+if any(keyword in task for keyword in NameKeywords):
+    Name = input ("What is your name? >>>> ")
+    print("Hello,", Name, "!")
+if any(keyword in task for keyword in MyNameKeywords):
+    print("Your name is", Name, ".")
+if any(keyword in task for keyword in TimeKeywords):
+    print("The time is", datetime.datetime.now().time())
+if any(keyword in task for keyword in HelpKeywords):
+    print("Keywords  Example  Action")
+    print("sandwich, eat sandwich, moldy sandwich - Can you please eat a moldy sandwich for me Bob? - Bob will eat a moldy sandwich")
+    print("joke, tell me a joke, pun - Bob, may you please tell me a joke? - Bob will tell the you a joke")
+    print("change name, my name - My name is Gavin - Bob will ask you your name")
+    print("what is my name, know my name - Do you know my name, Bob? - Bob will tell you your name if you told him before")
+    print("what is the time, time - What is the time right now Bob? - Bob will tell you the time")
+    print("/help - /help - Bob will show you the help menu")
